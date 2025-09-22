@@ -1,0 +1,142 @@
+.crop-health-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.health-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-indicator--primary {
+  background-color: var(--primary);
+}
+
+.status-indicator--success {
+  background-color: var(--success);
+}
+
+.status-indicator--warning {
+  background-color: var(--warning);
+}
+
+.status-indicator--error {
+  background-color: var(--error);
+}
+
+.status-text {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.health-overview {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+}
+
+.health-circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.circle-progress {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-inner {
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.health-value {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.health-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.health-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.crop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.crop-list-title {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.crop-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.crop-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.crop-name {
+  font-weight: 500;
+}
+
+.crop-area {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.crop-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.crop-health-value {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  min-width: 35px;
+}
+
+.widget-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

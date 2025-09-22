@@ -1,0 +1,114 @@
+/* Responsive adjustments for all components */
+
+/* Mobile-first approach */
+@media (max-width: 768px) {
+  /* Layout adjustments */
+  .main-container {
+    flex-direction: column;
+  }
+
+  .dashboard-grid,
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sidebar adjustments */
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    height: auto;
+  }
+
+  .sidebar-content {
+    flex-direction: row;
+    padding: 10px 0;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0 10px;
+  }
+
+  .sidebar-item {
+    min-width: 120px;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .sidebar-icon {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .sidebar-label {
+    font-size: var(--font-size-sm);
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  /* Header adjustments */
+  .logo-text {
+    display: none;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  /* Farm overview adjustments */
+  .farm-stats {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .stat-item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* Card adjustments */
+  .card {
+    padding: var(--spacing-sm);
+  }
+
+  .card-title {
+    font-size: var(--font-size-lg);
+  }
+
+  /* Button adjustments */
+  .button {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-sm);
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    padding: var(--spacing-md);
+  }
+
+  /* Notification adjustments */
+  .notification {
+    left: 10px;
+    right: 10px;
+    min-width: auto;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .dashboard-grid,
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 1025px) {
+  .dashboard-grid,
+  .game-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

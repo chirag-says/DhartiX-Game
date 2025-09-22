@@ -1,0 +1,177 @@
+.irrigation-control {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.irrigation-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-indicator.active {
+  background-color: var(--success);
+  animation: pulse 1.5s infinite;
+}
+
+.status-indicator.inactive {
+  background-color: var(--text-secondary);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.status-text {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.irrigation-overview {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+}
+
+.water-level {
+  width: 40px;
+  height: 120px;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.level-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, #2196f3, #64b5f6);
+  border-radius: 20px;
+  transition: height 1s ease;
+}
+
+.level-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.level-value {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.level-label {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.irrigation-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+}
+
+.setting-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.setting-label {
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+}
+
+.setting-control {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.setting-control input[type="range"] {
+  flex: 1;
+}
+
+.setting-value {
+  font-weight: 600;
+  min-width: 40px;
+}
+
+.setting-control select {
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  border: 1px solid #ddd;
+  background-color: white;
+  font-family: inherit;
+}
+
+.field-moisture {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-title {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+}
+
+.field-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-name {
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+}
+
+.field-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.field-value {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  min-width: 35px;
+}
+
+.field-target {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  align-self: flex-end;
+}
+
+.irrigation-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -1,0 +1,106 @@
+.community-board {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.create-post {
+  padding: 15px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+}
+
+.section-title {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.post-title-input,
+.post-content-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  margin-bottom: 10px;
+}
+
+.post-title-input {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+}
+
+.post-content-input {
+  resize: none;
+  font-size: var(--font-size-sm);
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.post {
+  padding: 15px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.user-name {
+  font-weight: 600;
+}
+
+.post-time {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.post-content {
+  margin-bottom: 15px;
+}
+
+.post-title {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.post-text {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.post-actions {
+  display: flex;
+  gap: 10px;
+}

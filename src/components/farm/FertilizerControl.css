@@ -1,0 +1,200 @@
+.fertilizer-control {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.fertilizer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.section-title {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.fertilizer-item {
+  padding: 15px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.fertilizer-item:hover {
+  background-color: rgba(76, 175, 80, 0.05);
+}
+
+.fertilizer-item.selected {
+  background-color: rgba(76, 175, 80, 0.1);
+  border-left: 4px solid var(--primary);
+}
+
+.fertilizer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.fertilizer-name {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+}
+
+.fertilizer-type {
+  padding: 4px 8px;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.fertilizer-type.organic {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--primary);
+}
+
+.fertilizer-type.chemical {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: var(--error);
+}
+
+.fertilizer-description {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.fertilizer-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.npk {
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+}
+
+.sustainability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sustainability-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.sustainability-rating {
+  display: flex;
+}
+
+.star {
+  color: #ddd;
+  font-size: 14px;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.application-settings {
+  padding: 15px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+}
+
+.setting-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.setting-label {
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+}
+
+.setting-control {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.setting-control input[type="range"] {
+  flex: 1;
+}
+
+.setting-value {
+  font-weight: 600;
+  min-width: 40px;
+}
+
+.field-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-sm);
+}
+
+.field-option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+.nutrient-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.field-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-name {
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+}
+
+.field-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.field-value {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  min-width: 35px;
+}
+
+.fertilizer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

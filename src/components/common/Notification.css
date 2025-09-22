@@ -1,0 +1,123 @@
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  min-width: 300px;
+  max-width: 400px;
+  z-index: 1070;
+  animation: slideInRight 0.3s ease, fadeOut 0.3s ease 4.7s;
+  animation-fill-mode: forwards;
+}
+
+.notification--success {
+  border-left: 4px solid var(--success);
+}
+
+.notification--error {
+  border-left: 4px solid var(--error);
+}
+
+.notification--warning {
+  border-left: 4px solid var(--warning);
+}
+
+.notification--info {
+  border-left: 4px solid var(--info);
+}
+
+.notification-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+  font-weight: bold;
+  color: white;
+}
+
+.notification--success .notification-icon {
+  background-color: var(--success);
+}
+
+.notification--error .notification-icon {
+  background-color: var(--error);
+}
+
+.notification--warning .notification-icon {
+  background-color: var(--warning);
+}
+
+.notification--info .notification-icon {
+  background-color: var(--info);
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: var(--font-size-md);
+}
+
+.notification-message {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  margin-left: 12px;
+  padding: 4px;
+  font-size: 16px;
+  line-height: 1;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition);
+}
+
+.notification-close:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .notification {
+    left: 10px;
+    right: 10px;
+    min-width: auto;
+    max-width: none;
+  }
+}

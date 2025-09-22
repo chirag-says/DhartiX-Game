@@ -1,0 +1,226 @@
+.coop-management {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.coop-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.my-coop,
+.available-coops {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.coop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+}
+
+.coop-info {
+  flex: 1;
+}
+
+.coop-name {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.coop-description {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.coop-stats {
+  display: flex;
+  gap: 15px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  min-width: 70px;
+}
+
+.stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-weight: 600;
+  font-size: var(--font-size-md);
+}
+
+.coop-resources {
+  padding: 15px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+}
+
+.section-title {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.resource-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: var(--border-radius);
+}
+
+.resource-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.resource-value {
+  font-weight: 600;
+  font-size: var(--font-size-md);
+}
+
+.resource-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.coop-challenges {
+  padding: 15px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+}
+
+.challenge-item {
+  padding: 15px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  margin-bottom: 10px;
+}
+
+.challenge-title {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.challenge-description {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.challenge-progress {
+  margin-bottom: 10px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: var(--border-radius-sm);
+}
+
+.challenge-rewards {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reward-icon {
+  font-size: 16px;
+}
+
+.reward-value {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.available-coops {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.coop-card {
+  padding: 15px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+  margin-bottom: 10px;
+}
+
+.coop-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.coop-level {
+  padding: 4px 8px;
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--primary);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.coop-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .coop-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .coop-stats {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
