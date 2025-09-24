@@ -4,6 +4,13 @@ const mockFarmData = require("../data/mockFarmData");
 const mockWeatherData = require("../data/mockWeatherData");
 const mockGameData = require("../data/mockGameData");
 
+// Moisture sensor data storage
+let moistureData = {
+  value: 0,
+  timestamp: new Date().toISOString(),
+};
+let moistureHistory = []; // Store last 50 readings
+
 // Farm data endpoints
 router.get("/farm-data", (req, res) => {
   setTimeout(() => {
@@ -71,6 +78,63 @@ router.get("/events", (req, res) => {
     res.json(mockGameData.events);
   }, 400);
 });
+
+// ===== NEW MOISTURE SENSOR ENDPOINTS =====
+
+// POST endpoint for NodeMCU to send moisture data
+router.post("/moisture", (req, res) => {
+  const { value } = req.body;
+
+  // Validate input
+  if (typeof value !== "number" || value < 0 || value > 1024) {
+    return res.status(400).json({
+      error: "Invalid moisture value. Must be between 0-1024",
+    });
+  }
+
+  // Update current data
+  moistureData = {
+    value,
+    timestamp: new Date().toISOString(),
+  };
+
+  // Add to history (keep last 50 readings)
+  moistureHistory.push({ ...moistureData });
+  if (moistureHistory.length > 50) {
+    moistureHistory.shift();
+  }
+
+  console.log("Received moisture data:", moistureData);
+  setTimeout(() => {
+    res.json({
+      success: true,
+      message: "Moisture data received",
+      data: moistureData,
+    });
+  }, 300);
+});
+
+// GET endpoint for latest moisture data
+router.get("/moisture", (req, res) => {
+  setTimeout(() => {
+    res.json(moistureData);
+  }, 200);
+});
+
+// GET endpoint for moisture history
+router.get("/moisture/history", (req, res) => {
+  const limit = parseInt(req.query.limit) || 20;
+  const history = moistureHistory.slice(-limit);
+
+  setTimeout(() => {
+    res.json({
+      data: history,
+      count: history.length,
+    });
+  }, 250);
+});
+
+// ===== EXISTING ENDPOINTS CONTINUE =====
 
 // Update farm data endpoint
 router.post("/update-farm", (req, res) => {
