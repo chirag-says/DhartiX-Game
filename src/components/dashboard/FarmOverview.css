@@ -1,98 +1,59 @@
 .farm-overview {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;      /* Reduced gap for compactness */
+  padding: 0;     /* No extra padding */
+  margin: 0;      /* No extra margin */
+}
+
+/* Apply to primary card layout for consistency */
+.card {
+  padding: 8px 12px;  /* Reduced padding in all cards */
+  margin: 0;          /* No extra margin */
+  box-shadow: none;   /* Optional: flatten card for less visual bulk */
+  background: #fff;
+  border-radius: 8px;
 }
 
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.card-title {
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0;
-}
-
-.farm-status {
-  display: flex;
-  align-items: center;
-}
-
-.status-indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin-right: 8px;
-}
-
-.status-indicator.healthy {
-  background-color: var(--success);
-}
-
-.status-indicator.warning {
-  background-color: var(--warning);
-}
-
-.status-text {
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.farm-stats {
-  display: flex;
-  justify-content: space-between;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stat-label {
-  font-size: 12px;
-  color: var(--text-secondary);
-  margin-bottom: 4px;
-}
-
-.stat-value {
-  font-weight: 600;
-  font-size: 16px;
-}
-
-.progress-section {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.progress-item {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.progress-label {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
+  padding: 0;          /* No extra padding inside header */
+  margin-bottom: 6px;  /* Slight gap after header */
 }
 
 .farm-actions {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;            /* Tighter action buttons */
+  margin: 0;           /* No extra margin */
+}
+
+.farm-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;           /* Tighter stats spacing */
+  padding: 0;          /* No padding */
+  margin: 0;
+}
+
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;            /* Less space between progress items */
+  margin: 0;
+}
+
+.progress-item {
+  gap: 3px;            /* Tighter progress details */
 }
 
 @media (max-width: 768px) {
   .farm-stats {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
-
   .stat-item {
     flex-direction: row;
     justify-content: space-between;

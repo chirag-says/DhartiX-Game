@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../common/Card";
 import Button from "../common/Button";
 import ProgressBar from "../common/ProgressBar";
-import "./FarmOverview.css";
+import "./FarmOverview.css";   // ✅ fixed
 
 const FarmOverview = ({ farmData }) => {
   if (!farmData) return <div>Loading farm data...</div>;
