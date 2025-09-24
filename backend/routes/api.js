@@ -11,6 +11,14 @@ let moistureData = {
 };
 let moistureHistory = []; // Store last 50 readings
 
+// ESP sensor data storage
+let espSensorData = {
+  distance: 0,
+  timestamp: new Date().toISOString(),
+  sensorId: 'ESP8266_ULTRASONIC'
+};
+let espSensorHistory = []; // Store last 100 readings
+
 // Farm data endpoints
 router.get("/farm-data", (req, res) => {
   setTimeout(() => {
@@ -132,6 +140,93 @@ router.get("/moisture/history", (req, res) => {
       count: history.length,
     });
   }, 250);
+});
+
+// ===== ESP SENSOR ENDPOINTS =====
+
+// POST endpoint for ESP8266 to send distance data
+router.post("/esp-sensor", (req, res) => {
+  const { distance } = req.body;
+
+  // Validate input
+  if (typeof distance !== "number" || distance < 0) {
+    return res.status(400).json({
+      error: "Invalid distance value. Must be a positive number",
+    });
+  }
+
+  // Update current data
+  espSensorData = {
+    distance,
+    timestamp: new Date().toISOString(),
+    sensorId: 'ESP8266_ULTRASONIC'
+  };
+
+  // Add to history (keep last 100 readings)
+  espSensorHistory.push({ ...espSensorData });
+  if (espSensorHistory.length > 100) {
+    espSensorHistory.shift();
+  }
+
+  console.log("Received ESP sensor data:", espSensorData);
+  res.json({
+    success: true,
+    message: "Distance data received successfully",
+    data: espSensorData,
+  });
+});
+
+// GET endpoint for latest ESP sensor data
+router.get("/esp-sensor", (req, res) => {
+  res.json({
+    success: true,
+    data: espSensorData
+  });
+});
+
+// GET endpoint for ESP sensor history
+router.get("/esp-sensor/history", (req, res) => {
+  const limit = parseInt(req.query.limit) || 50;
+  const history = espSensorHistory.slice(-limit);
+
+  res.json({
+    success: true,
+    data: history,
+    count: history.length,
+    totalReadings: espSensorHistory.length
+  });
+});
+
+// GET endpoint for ESP sensor statistics
+router.get("/esp-sensor/stats", (req, res) => {
+  if (espSensorHistory.length === 0) {
+    return res.json({
+      success: true,
+      data: {
+        totalReadings: 0,
+        averageDistance: 0,
+        minDistance: 0,
+        maxDistance: 0,
+        lastReading: null
+      }
+    });
+  }
+
+  const distances = espSensorHistory.map(reading => reading.distance);
+  const averageDistance = distances.reduce((sum, dist) => sum + dist, 0) / distances.length;
+  const minDistance = Math.min(...distances);
+  const maxDistance = Math.max(...distances);
+
+  res.json({
+    success: true,
+    data: {
+      totalReadings: espSensorHistory.length,
+      averageDistance: parseFloat(averageDistance.toFixed(2)),
+      minDistance,
+      maxDistance,
+      lastReading: espSensorData
+    }
+  });
 });
 
 // ===== EXISTING ENDPOINTS CONTINUE =====

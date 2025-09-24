@@ -14,6 +14,7 @@ import FieldPlanner from "./components/farm/FieldPlanner";
 import CropSelector from "./components/farm/CropSelector";
 import IrrigationControl from "./components/farm/IrrigationControl";
 import FertilizerControl from "./components/farm/FertilizerControl";
+import Farm3DCard from "./components/farm/Farm3DCard";
 import CoopManagement from "./components/social/CoopManagement";
 import Chat from "./components/social/Chat";
 import CommunityBoard from "./components/social/CommunityBoard";
@@ -65,6 +66,10 @@ function App() {
 
   const renderFarmManagement = () => (
     <div className="farm-grid">
+      {/* Big single card with interactive 3D farm */}
+      <div style={{ gridColumn: "1 / -1" }}>
+        <Farm3DCard />
+      </div>
       <FieldPlanner />
       <CropSelector />
       <IrrigationControl />
